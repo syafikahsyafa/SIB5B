@@ -1,24 +1,23 @@
 class Mario{
-    hp : number = 1
-    speed : number = 5
-    positionX : number = 0
-    positionY : number =  0
+    hp : number = 1;
+    speed : number = 5;
+    positionX : number = 0;
+    positionY : number =  0;
     invincible: boolean = false;
-    currentForm : string = 'mario';
+    currentForm : string = "mario";
 
-
-   moveRight(): void {
-        this.positionX += this.speed;
-        console.log(`Mario bergerak ke kanan. posisi X : ${this.positionX}`);
+    moveRight(): number {
+    this.positionX += this.speed
+    return this.positionX;
     }
 
-    moveLeft(): void {
-        this.positionX -= this.speed;
-        console.log(`Mario bergerak ke Kiri. posisi X :${this.positionX}`);
+    moveLeft(): number {
+    this.positionX -= this.speed;
+    return this.positionX;
     }
 
     getSuperMushroom(): void {
-        this.hp =+ 1;
+        this.hp += 1;
         this.currentForm = 'super mario' ;
         console.log(`Mario memakan super mushroom! From: ${this.currentForm}, hp: ${this.hp}`);        
     }
@@ -98,9 +97,12 @@ class SuperStar extends PowerUp {
 
 const mario = new Mario();
 
+
+
 const mushroom = new SuperMushroom();
 const flower = new FireFlower();
 const star = new SuperStar();
+
 
 mushroom.applyEffect(mario);
 flower.applyEffect(mario);
